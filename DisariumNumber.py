@@ -15,7 +15,7 @@ def power(n, power):
 inputNumber = input("Please enter your number: ")
 numbList = []
 for i in range(len(inputNumber)):
-    numbList.append(inputNumber.__getitem__(i))
+    numbList.append(inputNumber[i])
 powered = 0
 for i in numbList:
     powered = powered + power(int(i), int(numbList.index(i) + 1))
