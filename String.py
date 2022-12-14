@@ -61,3 +61,4 @@ byteData = b"Lets eat a \xf0\x9f\x8d\x95!"
 strData = byteData.decode('UTF-8')
 print(strData)
 print('-----------------------')
+print('test')
