@@ -35,7 +35,7 @@ n = 45
 # ////////////////////////////////// Test main def
 # result = binarysearch(list1, n)
 # ////////////////////////////////// Test Recursive def
-result = recursivebinarysearch(list1,n)
+result = recursivebinarysearch(list1, n)
 if result != -1:
     print("The result is in index: ", str(result))
 else:
