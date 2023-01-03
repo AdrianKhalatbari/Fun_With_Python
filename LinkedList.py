@@ -162,17 +162,53 @@ class CreateList:
         current.next = newNode
         newNode.next = temp
 
-    # def removeDuplicate(self):
-    #     current = self.head
-    #     temp = self.head.next
-    #     while True:
-    #         # while True:
-    #         if current.data == temp.data:
-    #             temp = current.next
-    #             current = None
-    #             current = temp
-    #             break
-    #         temp = temp.next
+    def removeDuplicate(self):
+        current = self.head
+        if (self.head == None):
+            print("List is empty")
+        else:
+            while True:
+                temp = current
+                index = current.next
+                while (index != self.head):
+                    if index.data == current.data:
+                        temp.next = index.next
+                    else:
+                        temp = index
+                    index = index.next
+                current = current.next
+                if current.next == self.head:
+                    break
+
+    def search(self, element):
+        current = self.head
+        index = 1
+        flag = False
+        while current.next != self.head:
+            if current.data == element:
+                flag = True
+                break
+            else:
+                index += 1
+                current = current.next
+        if flag == True:
+            print('\nElement is present in the list at the position:', str(index))
+        else:
+            print('\nElement is not present in the list')
+
+    def sortList(self):
+        current = self.head
+        while True:
+            index = current.next
+            while index != self.head:
+                if current.data > index.data:
+                    temp = current.data
+                    current.data = index.data
+                    index.data = temp
+                index = index.next
+            current = current.next
+            if current.next == self.head:
+                break
 
 
 class CircularLinkedList:
@@ -182,7 +218,7 @@ class CircularLinkedList:
     cl.add(2)
     cl.add(4)
     cl.add(7)
-    cl.add(2)
+    cl.add(6)
     cl.add(3)
     # Displays all the nodes present in the list
     cl.display()
@@ -212,3 +248,8 @@ class CircularLinkedList:
     # ////////////////////Python program to remove duplicate elements from a Circular Linked List
     # cl.removeDuplicate()
     # cl.display()
+    # ////////////////////Python program to search an element in a Circular Linked List
+    # cl.search(2)
+    # ////////////////////Python program to sort elements from a Circular Linked List
+    cl.sortList()
+    cl.display()
