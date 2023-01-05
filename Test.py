@@ -1,24 +1,14 @@
-def removeDuplicate(self):
-    # Current will point to head
-    current = self.head;
-    if (self.head == None):
-        print("List is empty");
-    else:
-        while (True):
-            # Temp will point to previous node of index.
-            temp = current;
-            # Index will point to node next to current
-            index = current.next;
-            while (index != self.head):
-                # If current node is equal to index data
-                if (current.data == index.data):
-                    # Here, index node is pointing to the node which is duplicate of current node
-                    # Skips the duplicate node by pointing to next node
-                    temp.next = index.next;
-                else:
-                    # Temp will point to previous node of index.
-                    temp = index;
-                index = index.next;
-            current = current.next;
-            if (current.next == self.head):
-                break;
+hame = []
+first = open("/Users/mohammad/Downloads/Exercise4_stepdata.txt", "r", encoding="utf-8")
+# second=open("second.txt","w")
+asghar = first.readlines()
+for row in asghar:
+    hame.append(int(row.replace("\n", "")))
+    # akbar = second.write(row + '\n')
+hame.sort()
+print(hame)
+# print(str(min(hame)))
+# m = min(hame)
+# print(m)
+# second.close()
+first.close()
