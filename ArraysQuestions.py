@@ -44,7 +44,7 @@ for i in range(0, len(arr2)):
             temp = arr2[i]
             arr2[i] = arr2[j]
             arr2[j] = temp
-print(arr2,end='')
+print(arr2, end='')
 
 print('\n------------array in descending order------------')
 # array in descending order
@@ -54,7 +54,7 @@ for i in range(0, len(arr2)):
             temp = arr2[i]
             arr2[i] = arr2[j]
             arr2[j] = temp
-print(arr2,end='')
+print(arr2, end='')
 
 print('\n------------DuplicateElementsOfArray------------')
 # Duplicate Elements Of Array
