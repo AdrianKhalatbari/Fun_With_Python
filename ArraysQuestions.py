@@ -27,41 +27,32 @@ print('\n------------rotate elements of an array------------')
 # rotate elements of an array
 arr1 = [1, 2, 3, 4, 5]
 n = 3
-tempList = []
-for i in range(n - 1):
-    tempList.append(arr1[0])
-    arr1.remove(arr1[0])
-for j in tempList:
-    arr1.append(j)
+for i in range(0, len(arr1)):
+    # Find the index of 3
+    if arr1[i] == n:
+        temp = arr1[i:]
+        temp.extend(arr1[:i])
+        arr1 = temp
+        break
 print(arr1)
 
 print('\n------------array in ascending order------------')
 # array in ascending order
 arr2 = [5, 2, 8, 7, 1]
-for i in range(0, len(arr2)):
-    for j in range(i+1, len(arr2)):
-        if arr2[i] > arr2[j]:
-            temp = arr2[i]
-            arr2[i] = arr2[j]
-            arr2[j] = temp
-print(arr2, end='')
+arr2.sort()
 
 print('\n------------array in descending order------------')
 # array in descending order
-for i in range(0, len(arr2)):
-    for j in range(i+1, len(arr2)):
-        if arr2[i] < arr2[j]:
-            temp = arr2[i]
-            arr2[i] = arr2[j]
-            arr2[j] = temp
-print(arr2, end='')
+arr2.sort(reverse=True)
+# OR
+arr2[::-1]
 
 print('\n------------DuplicateElementsOfArray------------')
 # Duplicate Elements Of Array
 arr3 = [1, 2, 3, 4, 2, 7, 8, 8, 3]
-newList = []
-for i in arr3:
-    if i in newList:
-        print(str(i), end=',')
-    else:
-        newList.append(i)
+duplicates = []
+arr3.sort()
+for i in range(0, len(temp) - 1):
+    if temp[i] == temp[i + 1]:
+        duplicates.append(temp[i])
+print(duplicates)
