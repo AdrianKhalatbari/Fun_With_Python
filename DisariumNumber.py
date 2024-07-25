@@ -1,25 +1,30 @@
-# A number is said to be the Disarium number when the sum of its digit raised to the power of their respective positions becomes equal to the number itself.
+# A number is said to be the Disarium number when the sum of its digit raised
+# to the power of their respective positions 
+# becomes equal to the number itself.
 #
 # For example, 175 is a Disarium number as follows:
 #
-# 11+ 72 + 53 = 1+ 49 + 125 = 175
+# 1^1+ 7^2 + 5^3 = 1+ 49 + 125 = 175
+
+#  First solution
+def is_disarium_number(num):
+    temp = num
+    sum = 0
+    length = len(str(num))
+    while temp > 0:
+        digit = temp % 10
+        sum = sum + digit ** length
+        length = length - 1
+        temp = temp // 10
+    if sum == num:
+        return True
+    else:
+        return False
 
 
-def power(n, power):
-    temp = n * n
-    for i in range(power - 2):
-        temp = temp * n
-    return temp
-
-
-inputNumber = input("Please enter your number: ")
-numbList = []
-for i in range(len(inputNumber)):
-    numbList.append(inputNumber[i])
-powered = 0
-for i in numbList:
-    powered = powered + power(int(i), int(numbList.index(i) + 1))
-if powered == int(inputNumber):
-    print(inputNumber, 'is a disarium number')
-else:
-    print(inputNumber, 'is not a disarium number')
+# Second solution
+temp = 0
+for i in range(len(str(175))):
+    temp = temp + pow(int(str(175)[i]), i + 1)
+if temp == 175:
+    print('175 is a Disarium number')

@@ -11,6 +11,7 @@ def calculateAverage(sentence):
             wordLen = wordLen + len(word)
     return round((wordLen / len(sentence)), 2)
 
+
 # /////////////////////Test assignment example
 def test_case_1():
     input = 'The quick brown fox jumps over the lazy dog'

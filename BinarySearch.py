@@ -1,3 +1,5 @@
+# It is a simple binary search algorithm
+# that searches for an ordered list of elements.
 def binarysearch(list, n):
     list.sort()
     high = len(list) - 1
