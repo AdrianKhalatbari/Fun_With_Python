@@ -14,3 +14,16 @@ def calculateCharacter(userInput):
 
 userInput = input("Please enter your input:")
 print(calculateCharacter(userInput))
+
+
+# Create a Dictionary of characters
+charDict = {}
+for i in userInput:
+    if i in charDict:
+        charDict[i] = charDict[i] + 1
+    else:
+        charDict[i] = 1
+print('Second way: ', charDict)
+
+if charDict == calculateCharacter(userInput):
+    print('Both are same')

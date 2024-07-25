@@ -1,4 +1,4 @@
-# Represents the node of the list.    
+# Represents the node of the list.
 class Node:
     def __init__(self, data):
         self.data = data
@@ -6,7 +6,7 @@ class Node:
 
 
 class CreateList:
-    # Declaring head and tail pointer as null.    
+    # Declaring head and tail pointer as null.
     def __init__(self):
         self.count = 0
         self.head = Node(None)

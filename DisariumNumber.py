@@ -1,5 +1,5 @@
 # A number is said to be the Disarium number when the sum of its digit raised
-# to the power of their respective positions 
+# to the power of their respective positions
 # becomes equal to the number itself.
 #
 # For example, 175 is a Disarium number as follows:

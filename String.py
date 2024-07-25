@@ -5,7 +5,7 @@ import random
 
 print('Sort Words in Alphabetic Order:')
 my_str = 'I am Mohammad and I am a python developer'
-my_str = my_str.split(' ')
+my_str = my_str.lower().split(' ')
 my_str.sort()
 print(my_str)
 print('-----------------------')
@@ -13,11 +13,17 @@ print('-----------------------')
 # Remove Punctuation from a String
 print('Remove Punctuation from a String')
 punctuationStr = 'hello ...... this is encrypterd @#$%&*'
+# First way
 punctuation = '''''!()-[]{};:'"\,<>./?@#$%^&*_~'''
 output = ''
 for char in punctuationStr:
     if char not in punctuation:
         output = output + char
+
+# Second way
+puntuation = string.punctuation
+punctuationStr = punctuationStr.translate(str.maketrans('', '', puntuation))
+
 print('input is: ', punctuationStr)
 print('output is: ', output)
 print('-----------------------')
@@ -28,6 +34,9 @@ firstStr = 'Java Developer'
 reversedStr = ''
 for char in firstStr:
     reversedStr = char + reversedStr
+
+# OR
+reversedStr = firstStr[::-1]
 print('input is: ', firstStr)
 print('output is: ', reversedStr)
 print('-----------------------')

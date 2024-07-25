@@ -13,25 +13,18 @@ inputNumber = int(input('Please enter number to check:'))
 
 
 def ponicNumber(searchedNumber):
-    flag = False
-    output = 0
-    ponicNumberList = []
-    for i in range(searchedNumber):
-        output = (i + 1) * (i + 2)
-        if output < searchedNumber:
-            ponicNumberList.append(output)
-        elif output == searchedNumber:
-            flag = True
-            ponicNumberList.append(output)
-        else:
-            return ponicNumberList, flag
+    output_list = []
+    for i in range(1, inputNumber):
+        temp = i * (i + 1)
+        if temp <= inputNumber:
+            output_list.append(temp)
+    return output_list
 
 
 # ////////Print a List of ponic numbers
-outputs = ponicNumber(inputNumber)[0]
-flag = ponicNumber(inputNumber)[1]
+outputs = ponicNumber(inputNumber)
 print(outputs)
-if flag:
+if inputNumber in outputs:
     print("Your input is ponic number")
 else:
     print('Your input is not ponic number')
